@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chess Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Player 1 Score -->
+    <div class="player-score" id="player-white">
+        <h2>White</h2>
+        <p id="score-white">Score: 0</p>
+        <div class="captured" id="captured-black"></div>
+      </div>
+
+    <!-- Chessboard in the center -->
+    <div class="game-area">
+      <h1>♟️ Online Chess Game ♟️</h1>
+      <div id="chessboard"></div>
+      <div id="turn-message"></div>
+      <div class="buttons">
+        <button id="restartBtn">🔄 Restart Game</button>
+        <button id="undoBtn">↩️ Undo Move</button>
+      </div>
+    </div>
+
+    <!-- Player 2 Score -->
+    <div class="player-score" id="player-black">
+        <h2>Black</h2>
+        <p id="score-black">Score: 0</p>
+        <div class="captured" id="captured-white"></div>
+      </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

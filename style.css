@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: url('pic3.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  flex-wrap: wrap;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.player-score {
+  width: 160px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+.player-score h2 {
+  margin-top: 0;
+}
+
+.captured {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.captured span {
+  display: inline-block;
+  margin: 2px 4px;
+  padding: 2px 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+.game-area {
+  text-align: center;
+  max-width: 600px;
+}
+
+#chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: repeat(8, 60px);
+  margin: 20px auto;
+  border: 4px solid #fff;
+  animation: popIn 0.8s ease-in-out;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  user-select: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.square:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px #fff;
+}
+
+.white {
+  background-color: #f5f5f5;
+  color: black;
+}
+
+.black {
+  background-color: #222;
+  color: white;
+}
+
+.white-piece {
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.black-piece {
+    color: #000;
+    text-shadow: 1px 1px 2px #fff;
+}
+.possible-move {
+    background-color: #5fa35f !important;
+    box-shadow: inset 0 0 10px #3c7c3c;
+  }
+  
+.highlight {
+  outline: 3px solid yellow;
+}
+
+.check {
+  background-color: red !important;
+  animation: blinkCheck 0.8s infinite alternate;
+}
+
+@keyframes blinkCheck {
+  from { background-color: red; }
+  to { background-color: rgb(255, 140, 140); }
+}
+
+#turn-message {
+  font-size: 22px;
+  margin: 15px 0;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+button {
+  font-size: 16px;
+  margin: 5px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #ff9900;
+  color: white;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #cc7a00;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  #chessboard {
+    grid-template-columns: repeat(8, 45px);
+    grid-template-rows: repeat(8, 45px);
+  }
+
+  .square {
+    font-size: 28px;
+  }
+
+  .player-score {
+    width: 120px;
+    margin-bottom: 15px;
+  }
+}
